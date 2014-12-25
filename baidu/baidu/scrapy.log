@@ -1,0 +1,31 @@
+2014-12-26 03:22:31+0800 [scrapy] INFO: Scrapy 0.24.4 started (bot: baidu)
+2014-12-26 03:22:31+0800 [scrapy] INFO: Optional features available: ssl, http11
+2014-12-26 03:22:31+0800 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'baidu.spiders', 'SPIDER_MODULES': ['baidu.spiders'], 'LOG_FILE': 'scrapy.log', 'BOT_NAME': 'baidu'}
+2014-12-26 03:22:31+0800 [scrapy] INFO: Enabled extensions: LogStats, TelnetConsole, CloseSpider, WebService, CoreStats, SpiderState
+2014-12-26 03:22:31+0800 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2014-12-26 03:22:31+0800 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2014-12-26 03:22:31+0800 [scrapy] INFO: Enabled item pipelines: BaiduPipeline
+2014-12-26 03:22:31+0800 [tieba] INFO: Spider opened
+2014-12-26 03:22:31+0800 [tieba] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2014-12-26 03:22:31+0800 [scrapy] DEBUG: Telnet console listening on 127.0.0.1:6023
+2014-12-26 03:22:31+0800 [scrapy] DEBUG: Web service listening on 127.0.0.1:6080
+2014-12-26 03:22:32+0800 [tieba] DEBUG: Crawled (200) <GET http://tieba.baidu.com/f?kw=%E6%B1%89%E6%9C%8D%E6%B0%B4%E5%90%A7&ie=utf-8&pn=0> (referer: None)
+2014-12-26 03:22:32+0800 [tieba] INFO: Closing spider (finished)
+2014-12-26 03:22:32+0800 [tieba] INFO: Dumping Scrapy stats:
+	{'downloader/request_bytes': 269,
+	 'downloader/request_count': 1,
+	 'downloader/request_method_count/GET': 1,
+	 'downloader/response_bytes': 57333,
+	 'downloader/response_count': 1,
+	 'downloader/response_status_count/200': 1,
+	 'finish_reason': 'finished',
+	 'finish_time': datetime.datetime(2014, 12, 25, 19, 22, 32, 909177),
+	 'log_count/DEBUG': 3,
+	 'log_count/INFO': 7,
+	 'response_received_count': 1,
+	 'scheduler/dequeued': 1,
+	 'scheduler/dequeued/memory': 1,
+	 'scheduler/enqueued': 1,
+	 'scheduler/enqueued/memory': 1,
+	 'start_time': datetime.datetime(2014, 12, 25, 19, 22, 31, 423001)}
+2014-12-26 03:22:32+0800 [tieba] INFO: Spider closed (finished)
