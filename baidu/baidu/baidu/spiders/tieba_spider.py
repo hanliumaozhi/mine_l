@@ -13,14 +13,17 @@ class tiebaSpider(scrapy.Spider):
     pre_url = "http://tieba.baidu.com/f?kw=%E6%B1%89%E6%9C%8D%E6%B0%B4%E5%90%A7&ie=utf-8&pn="
     index_url = 0
     
-    def paese_content(self, content):
-        name = Selector(text=content).xpath('//div[@class="threadlist_text threadlist_title j_th_tit  "]/a/text()').extract()[0]
-        author = Selector(text=content).xpath('//a[@class="j_user_card  "]/text()').extract()[0]
-        timex = Selector(text=content).xpath('//span[@class="threadlist_reply_date j_reply_data"]/text()').extract()
-        if len(timex) == 0:
-            timex = "00-00"
+    def check_null(self, someting):
+        if len(someting) == 0:
+            return "00"
         else:
-            timex = timex[0]
+            return someting[0]
+    
+    def paese_content(self, content):
+        name = self.check_null(Selector(text=content).xpath('//div[@class="threadlist_text threadlist_title j_th_tit  "]/a/text()').extract())
+        author = self.check_null(Selector(text=content).xpath('//a[@class="j_user_card  "]/text()').extract())
+        timex = self.check_null(Selector(text=content).xpath('//span[@class="threadlist_reply_date j_reply_data"]/text()').extract())
+
         return (name, author, timex)
         
     
@@ -31,7 +34,7 @@ class tiebaSpider(scrapy.Spider):
             content_info = self.paese_content(one_content)
             item['post_name'], item['post_author'], item['last_repy_time'] = content_info[0], content_info[1], content_info[2]
             yield item
-        if self.index_url < 100:
+        if self.index_url < 170350:
             self.index_url += 50
             complete_url = self.pre_url + str(self.index_url)
             yield Request(complete_url)
